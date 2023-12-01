@@ -8,7 +8,7 @@ Welcome to the Restaurant Reservation System! This Java program simulates a rest
 -Java IDE or text editor (e.g., IntelliJ IDEA, Eclipse, VSCode)
 
 ## Running the Program
--Clone the repository to your local machine: git clone https://github.com/your-username/restaurant-reservation-system.git
+-For users who are accessing this README.md file from github; Clone the repository to your local machine: git clone https://github.com/MathiasPascal/DSA_Final_Project/tree/main
 
 -Open the project in your preferred Java IDE or text editor.
 
