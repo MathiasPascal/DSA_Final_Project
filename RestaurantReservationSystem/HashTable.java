@@ -3,7 +3,8 @@ package RestaurantReservationSystem;
 import java.util.Random;
 
 /**
- * This class represents a generic hash table. It has a capacity, size, and an array of
+ * This class represents a generic hash table. It has a capacity, size, and an
+ * array of
  * entries. The hash table uses double hashing to handle collisions. The hash
  * table uses the djb2 hash function to calculate the hash of the entry. The
  * hash table resizes itself when the size reaches the capacity.
@@ -11,10 +12,7 @@ import java.util.Random;
  * The time complexity of the insert, search, and delete operations in the
  * HashTable class is O(1) on average. This is because the primaryHash and
  * secondaryHash methods calculate the index of the entry based on the key in
- * constant time. The while loops in the insert, search, and delete methods
- * iterate through the table at most once, and the resizeTable method only needs
- * to iterate through the existing table once. The generateRandomPrime, isPrime,
- * and getNextPrime methods also take constant time on average.
+ * constant time.
  */
 public class HashTable<K, V extends Entry<K, V>> {
     private V[] table;
@@ -161,8 +159,10 @@ public class HashTable<K, V extends Entry<K, V>> {
      * table. It then sets the table to the new table and sets the capacity to the
      * new capacity.
      * 
-     * The time complexity is O(n) where n is the number of entries in the table because
-     * it iterates through all the entries in the table and inserts them into the new table.
+     * The time complexity is O(n) where n is the number of entries in the table
+     * because
+     * it iterates through all the entries in the table and inserts them into the
+     * new table.
      * 
      * @throws IllegalStateException if the maximum capacity is reached
      */
@@ -211,7 +211,7 @@ public class HashTable<K, V extends Entry<K, V>> {
      * 
      * @param min the minimum value of the random number
      * @param max the maximum value of the random number
-     * @return a random prime number between the specified minimum and maximum 
+     * @return a random prime number between the specified minimum and maximum
      */
     private int generateRandomPrime(int min, int max) {
         Random random = new Random();
@@ -276,7 +276,8 @@ public class HashTable<K, V extends Entry<K, V>> {
     /**
      * This method returns the capacity of the hash table.
      * 
-     * The time complexity is O(1) because it is a constant time operation (getting the value of the capacity field)
+     * The time complexity is O(1) because it is a constant time operation (getting
+     * the value of the capacity field)
      * 
      * @return the capacity of the hash table
      */
@@ -302,7 +303,8 @@ public class HashTable<K, V extends Entry<K, V>> {
     /**
      * This method returns an array of all the entries in the hash table.
      * 
-     * The time complexity is O(n) where n is the number of entries in the table because
+     * The time complexity is O(n) where n is the number of entries in the table
+     * because
      * it iterates through all the entries in the table.
      * 
      * @return an array of all the entries in the hash table
