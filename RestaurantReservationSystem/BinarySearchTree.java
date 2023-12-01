@@ -311,7 +311,8 @@ public class BinarySearchTree {
 
     /**
      * The time complexity of the inorder method is O(n).
-     * This is because the inorder method recurses down the tree to print the nodes
+     * This is because the inorder method recurses down the tree to print the nodes. Starting
+     * 
      */
     private void inorder(Node node) {
         if (node != null) {
