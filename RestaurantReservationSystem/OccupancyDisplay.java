@@ -21,7 +21,11 @@ public class OccupancyDisplay {
     }
 
     /**
-     * The time complexity is O(n)
+     * The time complexity is O(n). This is because the method iterates over each
+     * entry in the hash table, performing constant-time operations to access the
+     * table, customer, and status values and print them. Since the number of
+     * entries in the hash table determines the number of iterations, the time
+     * complexity is linear with respect to the number of entries.
      */
     public void displayOccupancy() {
         Entry<String, Reservation>[] entries = reservationTable.getAllEntries();

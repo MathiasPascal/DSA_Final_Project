@@ -42,7 +42,7 @@ public class App {
                     waitlist.displayWaitlist();
                     break;
                 case 5:
-                    displayOccupancyOverview(reservationSystem.getReservationsByCustomer(), waitlist);
+                    displayOccupancyOverview(reservationSystem, waitlist);
                     break;
                 case 6:
                     System.out.println("Exiting the program. Thank you!");
@@ -211,10 +211,11 @@ public class App {
      * @param reservationsByCustomer
      * @param waitlist
      */
-    private static void displayOccupancyOverview(HashTable<String, Reservation> reservationsByCustomer,
+    private static void displayOccupancyOverview(ReservationSystem reservationsByCustomer,
             Waitlist waitlist) {
         System.out.println("Current Reservations:");
-        reservationsByCustomer.getAllEntries();
+        reservationsByCustomer.displayReservations();
+        
         System.out.println("\nWaitlist:");
         waitlist.displayWaitlist();
     }
