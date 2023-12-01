@@ -4,7 +4,7 @@ Welcome to the Restaurant Reservation System! This Java program simulates a rest
 
 ## Getting Started
 
--**Prerequisites**
+- **Prerequisites**
     - Java Development Kit (JDK) installed
     - Java IDE or text editor (e.g., IntelliJ IDEA, Eclipse, VSCode)
 
@@ -20,7 +20,7 @@ Welcome to the Restaurant Reservation System! This Java program simulates a rest
 
 ## Usage
 
--**Menu Options**
+- **Menu Options**
     - Book a Table: Allows you to make a reservation by entering customer details and reservation date/time.
 
     - Cancel Reservation: Cancels a reservation based on the customer's last name.
@@ -45,3 +45,8 @@ Welcome to the Restaurant Reservation System! This Java program simulates a rest
 
 ## Acknowledgments
     - This project was developed as part of Ashesi University's coursework in Data Structures final project.
+
+## Authors
+- Emmanuel Soumahoro, Elikem Tsatsu, Faisal Alidu, Pascal Mathias
+
+## ---
