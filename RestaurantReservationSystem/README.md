@@ -3,6 +3,7 @@
 Welcome to the Restaurant Reservation System! This Java program simulates a restaurant reservation system, allowing users to book tables, cancel reservations, view reservation statuses, manage a waitlist, and display occupancy status.
 
 ## Getting Started
+
 -**Prerequisites**
 -Java Development Kit (JDK) installed
 -Java IDE or text editor (e.g., IntelliJ IDEA, Eclipse, VSCode)
@@ -18,6 +19,7 @@ Welcome to the Restaurant Reservation System! This Java program simulates a rest
 
 
 ## Usage
+
 -**Menu Options**
 -Book a Table: Allows you to make a reservation by entering customer details and reservation date/time.
 
