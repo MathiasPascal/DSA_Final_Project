@@ -14,6 +14,7 @@ public class Reservation extends Entry<String, Reservation> {
         this.date = date;
         this.time = time;
         this.status = "Booked";
+        this.table.setAvailablility(false);
     }
 
     public Customer getCustomer() {

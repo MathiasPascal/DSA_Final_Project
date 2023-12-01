@@ -148,4 +148,8 @@ public class BinarySearchTree {
             inorder(node.getRight());
         }
     }
+
+    public Node getRoot() {
+        return root;
+    }
 }

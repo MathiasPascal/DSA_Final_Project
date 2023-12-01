@@ -52,4 +52,12 @@ public class Waitlist {
             System.out.println("Waitlist is empty.");
         }
     }
+
+    public boolean isEmpty() {
+        return waitlistQueue.isEmpty();
+    }
+
+    public Customer peek() {
+        return waitlistQueue.peek();
+    }
 }
