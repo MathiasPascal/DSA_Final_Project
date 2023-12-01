@@ -6,6 +6,13 @@ package RestaurantReservationSystem;
  * and right children are the nodes that are less than and greater than the node
  * respectively.
  */
+
+/*
+ * The time complexity of the Node class methods is O(1),
+ * which means they have constant time complexity. This is because the methods
+ * perform
+ * a fixed number of operations, regardless of the size of the input.
+ */
 class Node {
     private Table table;
     private Node left;
@@ -51,18 +58,37 @@ class Node {
     }
 }
 
+/*
+ * The time complexity of the insert, delete, search, and inorder methods in the
+ * BinarySearchTree class is O(log n), where n is the number of nodes in the
+ * tree. This is because these methods recurse down the tree to find the desired
+ * node or perform the desired operation, and the number of recursive calls
+ * depends on the height of the tree, which is logarithmic in the number of
+ * nodes in the tree (if the tree is balanced). The space complexity of these
+ * methods is also O(log n), because the recursive calls consume space on the
+ * call stack.
+ */
 public class BinarySearchTree {
     private Node root;
 
+    /**
+     * // The time complexity of the BinarySearchTree constructor is O(1)
+     */
     public BinarySearchTree() {
         root = null;
     }
 
-    public void insert(Table table) {
+    /**
+     * // The time complexity of the insert function is O(log n)
+     */
+    public void insert(Table table) { 
         root = insert(root, table);
     }
 
-    private Node insert(Node node, Table table) {
+    /**
+     * // The time complexity of the insert function is O(log n)
+     */
+    private Node insert(Node node, Table table) { 
         if (node == null) {
             node = new Node(table);
         } else {
@@ -75,6 +101,9 @@ public class BinarySearchTree {
         return node;
     }
 
+    /**
+     * // The time complexity of the insert function is O(log n)
+     */
     public void delete(int tableNumber) {
         if (root == null) {
             System.out.println("Tree is empty");
@@ -88,7 +117,10 @@ public class BinarySearchTree {
         }
     }
 
-    private Node delete(Node node, int tableNumber) {
+    /**
+     * // The time complexity of the insert function is O(log n)
+     */
+    private Node delete(Node node, int tableNumber) { 
         if (node == null) {
             return null;
         }
@@ -110,7 +142,10 @@ public class BinarySearchTree {
         return node;
     }
 
-    private Node minValue(Node node) {
+    /**
+     * // The time complexity of the insert function is O(log n)
+     */
+    private Node minValue(Node node) { 
         Node current = node;
         while (current.getLeft() != null) {
             current = current.getLeft();
@@ -118,11 +153,17 @@ public class BinarySearchTree {
         return current;
     }
 
-    public boolean search(int tableNumber) {
+    /**
+     * // The time complexity of the insert function is O(log n)
+     */
+    public boolean search(int tableNumber) { 
         return search(root, tableNumber);
     }
 
-    private boolean search(Node node, int tableNumber) {
+    /**
+     * // The time complexity of the insert function is O(log n)
+     */
+    private boolean search(Node node, int tableNumber) { 
         if (node == null) {
             return false;
         }
@@ -141,7 +182,10 @@ public class BinarySearchTree {
         inorder(root);
     }
 
-    private void inorder(Node node) {
+    /**
+     * // The time complexity of the inorder method is O(n)
+     */
+    private void inorder(Node node) { 
         if (node != null) {
             inorder(node.getLeft());
             System.out.println(node.getTable().getCapacity() + " ");

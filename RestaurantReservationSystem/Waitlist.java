@@ -7,11 +7,20 @@ package RestaurantReservationSystem;
  * 
  * @see Queue
  */
+
+/**
+ * The time complexity of the Waitlist class methods addToWaitlist(),
+ * removeFromWaitlist(), displayWaitlist(), isEmpty(), and peek() is O(1), which
+ * means they have constant time complexity. This is because these methods all
+ * perform a fixed number of operations, regardless of the size of the waitlist.
+ * 
+ */
 public class Waitlist {
     private Queue waitlistQueue;
 
     /**
-     * Constructs a new Waitlist object. The waitlist is a queue of customers. 
+     * Constructs a new Waitlist object. The waitlist is a queue of customers.
+     * 
      * @see Queue
      */
     public Waitlist() {
@@ -19,16 +28,22 @@ public class Waitlist {
     }
 
     /**
-     * Adds a customer to the waitlist. 
+     * Adds a customer to the waitlist.
+     * 
      * @param customer the customer to be added to the waitlist
+     * 
+     * // Time complexity is O(1)
      */
+    
     public void addToWaitlist(Customer customer) {
         waitlistQueue.enqueue(customer);
         System.out.println(customer.getName() + " has been added to the waitlist.");
     }
 
     /**
-     * Removes the next customer from the waitlist. 
+     * Removes the next customer from the waitlist.
+     * 
+     * // Time complexity is O(1)
      */
     public void removeFromWaitlist() {
         if (!waitlistQueue.isEmpty()) {
@@ -41,8 +56,12 @@ public class Waitlist {
     }
 
     /**
-     * Displays the waitlist. 
+     * Displays the waitlist.
+     * 
+     * // Time complexity is O(n)
+     * 
      * @see Queue#toString()
+     * 
      */
     public void displayWaitlist() {
         if (!waitlistQueue.isEmpty()) {
@@ -53,10 +72,18 @@ public class Waitlist {
         }
     }
 
+    /**
+     * // Time complexity is O(1)
+     * @return
+     */
     public boolean isEmpty() {
         return waitlistQueue.isEmpty();
     }
 
+    /**
+     * // Time complexity is O(1)
+     * @return
+     */
     public Customer peek() {
         return waitlistQueue.peek();
     }

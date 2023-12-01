@@ -1,9 +1,17 @@
 package RestaurantReservationSystem;
 
-import java.util.Arrays;
 import java.util.Random;
 
-public class HashTable<K, V extends Entry<K,V>> {
+/**
+ * The time complexity of the insert, search, and delete operations in the
+ * HashTable class is O(1) on average. This is because the primaryHash and
+ * secondaryHash methods calculate the index of the entry based on the key in
+ * constant time. The while loops in the insert, search, and delete methods
+ * iterate through the table at most once, and the resizeTable method only needs
+ * to iterate through the existing table once. The generateRandomPrime, isPrime,
+ * and getNextPrime methods also take constant time on average.
+ */
+public class HashTable<K, V extends Entry<K, V>> {
     private V[] table;
     private int size;
     private int capacity;
@@ -16,7 +24,10 @@ public class HashTable<K, V extends Entry<K,V>> {
         this.prime = generateRandomPrime(10, 90);
     }
 
-    private int entryHash(K key) {
+    /**
+     * // The time complexity is O(1)
+     */
+    private int entryHash(K key) { 
         int hash = 0;
 
         for (char c : key.toString().toCharArray()) {
@@ -26,17 +37,26 @@ public class HashTable<K, V extends Entry<K,V>> {
         return hash;
     }
 
+    /**
+     * // The time complexity is O(1)
+     */
     private int primaryHash(K key) {
         int hash = entryHash(key);
         return Math.abs(hash % capacity);
     }
 
+    /**
+     * // The time complexity is O(1)
+     */
     private int secondaryHash(K key) {
         int hash = entryHash(key);
         int step = 1 + (hash % (capacity - 1));
         return step;
     }
 
+    /**
+     * // The time complexity is O(1)
+     */
     public void insert(V entry) {
         if (size == capacity) {
             resizeTable();
@@ -54,6 +74,9 @@ public class HashTable<K, V extends Entry<K,V>> {
         size++;
     }
 
+    /**
+     * // The time complexity is O(1)
+     */
     public V search(K key) {
         int index = primaryHash(key);
         int step = secondaryHash(key);
@@ -68,6 +91,9 @@ public class HashTable<K, V extends Entry<K,V>> {
         return null;
     }
 
+    /**
+     * // The time complexity is O(1)
+     */
     public void delete(K key) {
         int index = primaryHash(key);
         int step = secondaryHash(key);
@@ -82,6 +108,9 @@ public class HashTable<K, V extends Entry<K,V>> {
         }
     }
 
+    /**
+     * // The time complexity is O(1)
+     */
     private void resizeTable() {
         int newCapacity = getNextPrime(capacity * 2);
         if (newCapacity <= capacity) {
@@ -112,6 +141,9 @@ public class HashTable<K, V extends Entry<K,V>> {
         capacity = newCapacity;
     }
 
+    /**
+     * // The time complexity is O(1)
+     */
     private int generateRandomPrime(int min, int max) {
         Random random = new Random();
 
@@ -164,7 +196,10 @@ public class HashTable<K, V extends Entry<K,V>> {
         return str.toString();
     }
 
-    public Entry<K,V>[] getAllEntries() {
+    /**
+     * // The time complexity is O(1)
+     */
+    public Entry<K, V>[] getAllEntries() {
         return table;
     }
 }

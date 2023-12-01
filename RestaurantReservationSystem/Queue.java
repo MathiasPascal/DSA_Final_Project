@@ -35,6 +35,15 @@ class Node {
     }
 }
 
+/**
+ * The time complexity of enqueue, dequeue, peek, and isEmpty methods in the
+ * Queue class is O(1), where n is the number of elements in the queue. This is
+ * because these methods perform a constant number of operations regardless of
+ * the size of the queue. The toString method has a time complexity of O(n),
+ * because it iterates over each node in the queue and appends its customer to a
+ * StringBuilder, resulting in a linear runtime with respect to the number of
+ * elements in the queue.
+ */
 public class Queue {
     private Node front;
     private Node rear;
@@ -44,6 +53,10 @@ public class Queue {
         rear = null;
     }
 
+    /**
+     * // Time complexity of O(1)
+     * @param customer
+     */
     public void enqueue(Customer customer) {
         Node newNode = new Node(customer);
         if (isEmpty()) {
@@ -55,6 +68,9 @@ public class Queue {
         }
     }
 
+    /**
+     * // Time complexity of O(1)
+     */
     public void dequeue() {
         if (isEmpty()) {
             throw new IllegalStateException("Queue is empty. Cannot dequeue.");
@@ -65,6 +81,10 @@ public class Queue {
         }
     }
 
+    /**
+     * // Time complexity of O(1)
+     * @return
+     */
     public Customer peek() {
         if (isEmpty()) {
             throw new IllegalStateException("Queue is empty. Cannot peek.");
@@ -72,10 +92,17 @@ public class Queue {
         return front.getCustomer();
     }
 
+    /**
+     * // Time complexity of O(1)
+     * @return
+     */
     public boolean isEmpty() {
         return front == null;
     }
 
+    /**
+     * // Time complexity of O(n)
+     */
     public String toString() {
         StringBuilder sb = new StringBuilder();
         Node current = front;

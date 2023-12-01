@@ -1,5 +1,14 @@
 package RestaurantReservationSystem;
 
+/**
+ * The time complexity of the displayOccupancy() method is O(n), where n is the
+ * number of entries in the reservationTable hash table. This is because the
+ * method iterates over each entry in the hash table, performing constant-time
+ * operations to access the table, customer, and status values and print them.
+ * Since the number of entries in the hash table determines the number of
+ * iterations, the time complexity is linear with respect to the number of
+ * entries.
+ */
 public class OccupancyDisplay {
     private HashTable<String, Reservation> reservationTable;
 
@@ -7,6 +16,9 @@ public class OccupancyDisplay {
         this.reservationTable = reservationTable;
     }
 
+    /**
+     * // The time complexity is O(n)
+     */
     public void displayOccupancy() {
         Entry<String, Reservation>[] entries = reservationTable.getAllEntries();
         for (Entry<String, Reservation> entry : entries) {

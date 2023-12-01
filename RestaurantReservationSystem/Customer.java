@@ -26,6 +26,16 @@ import java.util.regex.Pattern;
  * @param hasReservation whether or not the customer has a reservation
  * @param hasDependents  whether or not the customer has dependents
  */
+
+ /**
+     * The time complexity of the Customer class constructors, setters, and getters
+     * is O(1) because each operation performs a constant number of operations
+     * regardless of the size of the input. Similarly, the space complexity is also
+     * O(1) because the amount of memory used by these methods does not depend on
+     * the size of the input. The isValidNumber and isValidEmail methods have a time
+     * complexity of O(1) as well since they each perform a single regular
+     * expression match.
+     */
 public class Customer {
     private String firstName;
     private String lastName;
@@ -52,6 +62,8 @@ public class Customer {
      * @param hasReservation whether or not the customer has a reservation
      * @param hasDependents  whether or not the customer has dependents
      */
+
+    
     public Customer(String firstName, String lastName, String phoneNumber, String address, String email,
             boolean hasReservation, boolean hasDependents) {
         this.firstName = firstName;

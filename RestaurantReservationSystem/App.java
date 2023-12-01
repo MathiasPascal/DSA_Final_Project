@@ -2,6 +2,17 @@ package RestaurantReservationSystem;
 
 import java.util.Scanner;
 
+/**
+ * Time complexity - O(n)
+ * 
+ * The time complexity of the main method in the App class is O(n),
+ * where n is the number of iterations in the while loop. The while loop 
+ * runs indefinitely until the program is exited, but each iteration of the loop takes
+ * constant time to execute the menu display and handle the user's choice. 
+ * The other methods in the App class have time complexity that is independent of 
+ * the input size and can be considered O(1) as well.
+ */
+
 public class App {
 
     public static void main(String[] args) {
