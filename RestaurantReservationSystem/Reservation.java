@@ -93,7 +93,7 @@ public class Reservation extends Entry<String, Reservation> {
     }
 
     public String toString() {
-        return "Customer: " + customer + ", Table: " + table.getTableNumber() + ", Date: " + date + ", Time: " + time
+        return "Customer: " + customer.getName() + ", Table: " + table.getTableNumber() + ", Date: " + date + ", Time: " + time
                 + ", Status: "
                 + status;
     }
