@@ -22,7 +22,7 @@ public class App {
                     makeReservation(scanner, reservationSystem, tableAvailabilityTree, waitlist);
                     break;
                 case 2:
-                    cancelReservation(scanner, reservationSystem, waitlist);
+                    cancelReservation(scanner, reservationSystem, waitlist, tableAvailabilityTree);
                     break;
                 case 3:
                     reservationSystem.displayReservations();
@@ -73,10 +73,12 @@ public class App {
         String phoneNumber = scanner.next();
 
         System.out.print("Enter customer address: ");
-        String address = scanner.next();
+        String address = scanner.nextLine();
+        scanner.nextLine();
 
         System.out.print("Enter customer email address: ");
         String email = scanner.next();
+        scanner.nextLine();
 
         Customer customer = new Customer(firstName, lastName, phoneNumber, address, email, false, false);
 
@@ -104,7 +106,7 @@ public class App {
         }
     }
 
-    private static void cancelReservation(Scanner scanner, ReservationSystem reservationSystem, Waitlist waitlist) {
+    private static void cancelReservation(Scanner scanner, ReservationSystem reservationSystem, Waitlist waitlist, BinarySearchTree tableAvailabilityTree) {
         System.out.print("Enter customer last name for cancellation: ");
         String lastName = scanner.next();
 
@@ -113,27 +115,27 @@ public class App {
         if (reservationToDelete != null) {
             reservationSystem.cancelReservation(lastName);
             System.out.println("Reservation canceled successfully.");
-            processWaitlist(reservationSystem, waitlist);
+            processWaitlist(reservationSystem, tableAvailabilityTree, waitlist);
         } else {
             System.out.println("Reservation not found for customer: " + lastName);
         }
     }
 
-    private static void processWaitlist(ReservationSystem reservationSystem, Waitlist waitlist) {
-        while (!waitlist.isEmpty()) {
-            Customer nextCustomer = waitlist.peek();
-            Table availableTable = findAvailableTable(reservationSystem.getTableAvailabilityTree(), 4);
+    private static void processWaitlist(ReservationSystem reservationSystem, BinarySearchTree tableAvailabilityTree, Waitlist waitlist) {
+    while (!waitlist.isEmpty()) {
+        Customer nextCustomer = waitlist.peek();
+        Table availableTable = findAvailableTable(tableAvailabilityTree, 4);
 
-            if (availableTable != null) {
-                waitlist.removeFromWaitlist();
-                reservationSystem.addReservation(nextCustomer, availableTable, "2023-12-01", "19:00");
-                System.out.println("Reservation for " + nextCustomer.getName() + " added from waitlist.");
-            } else {
-                System.out.println("No available tables. Please try again later.");
-                break;
-            }
+        if (availableTable != null) {
+            waitlist.removeFromWaitlist();
+            reservationSystem.addReservation(nextCustomer, availableTable, "2023-12-01", "19:00");
+            System.out.println("Reservation for " + nextCustomer.getName() + " added from waitlist.");
+        } else {
+            break; // No more available tables
         }
     }
+}
+
 
     private static void displayOccupancyOverview(HashTable<String, Reservation> reservationsByCustomer, Waitlist waitlist) {
         System.out.println("Current Reservations:");
