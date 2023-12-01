@@ -9,13 +9,13 @@ Welcome to the Restaurant Reservation System! This Java program simulates a rest
     - Java IDE or text editor (e.g., IntelliJ IDEA, Eclipse, VSCode)
 
 ## Running the Program
-    - For users who are accessing this README.md file from github; Clone the repository to your local machine: git clone https://github.com/MathiasPascal/DSA_Final_Project/tree/main
+- For users who are accessing this README.md file from github; Clone the repository to your local machine: git clone https://github.com/MathiasPascal/DSA_Final_Project/tree/main
 
-    - Open the project in your preferred Java IDE or text editor.
+- Open the project in your preferred Java IDE or text editor.
 
-    - Run the App class, which contains the main method.
+- Run the App class, which contains the main method.
 
-    - Follow the on-screen menu to interact with the Restaurant Reservation System.
+- Follow the on-screen menu to interact with the Restaurant Reservation System.
 
 
 ## Usage
@@ -39,12 +39,12 @@ Welcome to the Restaurant Reservation System! This Java program simulates a rest
 
 
 ## Notes
-    - Input validation is in place to handle invalid inputs gracefully.
-    - Reservations and waitlist information is stored in memory during the program's runtime.
+- Input validation is in place to handle invalid inputs gracefully.
+- Reservations and waitlist information is stored in memory during the program's runtime.
 
 
 ## Acknowledgments
-    - This project was developed as part of Ashesi University's coursework in Data Structures final project.
+- This project was developed as part of Ashesi University's coursework in Data Structures final project.
 
 ## Authors
 - Emmanuel Soumahoro, Elikem Tsatsu, Faisal Alidu, Pascal Mathias
