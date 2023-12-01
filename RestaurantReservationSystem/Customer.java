@@ -25,17 +25,17 @@ import java.util.regex.Pattern;
  * @param email          the email address of the customer
  * @param hasReservation whether or not the customer has a reservation
  * @param hasDependents  whether or not the customer has dependents
+ * 
+ *                       The time complexity of the Customer class constructors,
+ *                       setters, and getters
+ *                       is O(1) because each operation performs a constant
+ *                       number of operations
+ *                       regardless of the size of the input. The isValidNumber and
+ *                       isValidEmail methods have a time
+ *                       complexity of O(1) as well since they each perform a
+ *                       single regular
+ *                       expression match.
  */
-
- /**
-     * The time complexity of the Customer class constructors, setters, and getters
-     * is O(1) because each operation performs a constant number of operations
-     * regardless of the size of the input. Similarly, the space complexity is also
-     * O(1) because the amount of memory used by these methods does not depend on
-     * the size of the input. The isValidNumber and isValidEmail methods have a time
-     * complexity of O(1) as well since they each perform a single regular
-     * expression match.
-     */
 public class Customer {
     private String firstName;
     private String lastName;
@@ -63,7 +63,6 @@ public class Customer {
      * @param hasDependents  whether or not the customer has dependents
      */
 
-    
     public Customer(String firstName, String lastName, String phoneNumber, String address, String email,
             boolean hasReservation, boolean hasDependents) {
         this.firstName = firstName;
@@ -75,6 +74,13 @@ public class Customer {
         this.hasDependents = hasDependents;
     }
 
+    /**
+     * Sets the phone number of the customer. The phone number must be valid in
+     * order to be set.
+     * 
+     * @throws IllegalArgumentException if the phone number is invalid
+     * @param number the phone number of the customer
+     */
     public void setNumber(String number) {
         if (isValidNumber(number)) {
             this.phoneNumber = number;
@@ -83,6 +89,14 @@ public class Customer {
         }
     }
 
+    /**
+     * Sets the email address of the customer. The email address must be valid in
+     * order to be set. If the email address is invalid, it is set to null and the
+     * customer is created regardless. The time complexity of this method is O(1)
+     * because it performs a single regular expression match.
+     * 
+     * @param email the email address of the customer
+     */
     public void setEmail(String email) {
         if (isValidEmail(email)) {
             this.email = email;
@@ -93,7 +107,8 @@ public class Customer {
 
     /**
      * Returns true if the phone number is valid, false otherwise. A valid phone
-     * number is a sequence of digits.
+     * number is a sequence of digits. The time complexity of this method is O(1)
+     * because it performs a single regular expression match.
      *
      * @param number the phone number to check
      * @return true if the phone number is valid, false otherwise
@@ -106,7 +121,8 @@ public class Customer {
      * Returns true if the email address is valid, false otherwise. A valid email
      * address is a sequence of characters that contains an @ symbol followed by
      * some
-     * characters, then a period then some characters.
+     * characters, then a period then some characters. The time complexity of this
+     * method is O(1) because it performs a single regular expression match.
      *
      * @param email the email address to check
      * @return true if the email address is valid, false otherwise

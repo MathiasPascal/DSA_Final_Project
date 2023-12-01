@@ -1,6 +1,10 @@
 package RestaurantReservationSystem;
 
 /**
+ * This class represents the reservation system for the restaurant. The
+ * reservation system stores reservations in a hash table, where the key is the
+ * customer name and the value is the reservation.
+ * 
  * The time complexity of the addReservation method is O(1) because it involves
  * inserting a reservation into a hash table, which has an average case time
  * complexity of O(1). The time complexity of the cancelReservation method is
@@ -18,7 +22,11 @@ public class ReservationSystem {
     }
 
     /**
-     * // Time complexity is O(n)
+     * This method adds a reservation to the hash table. It invokes the insert
+     * method of the hash table, which has an average case time complexity of O(1).
+     * 
+     * Time complexity is O(n)
+     * 
      * @param customer
      * @param table
      * @param date
@@ -31,7 +39,10 @@ public class ReservationSystem {
     }
 
     /**
-     * // Time complexity is O(n)
+     * This method cancels a reservation by deleting it from the hash table. It
+     * invokes the delete method of the hash table, which has an average case time
+     * complexity of O(1).
+     * 
      * @param customerName
      */
     public void cancelReservation(String customerName) {
@@ -46,7 +57,9 @@ public class ReservationSystem {
     }
 
     /**
-     * // Time complexity is O(n)
+     * This method displays all the reservations in the hash table. It invokes the
+     * getAllEntries method of the hash table, which has a time complexity of O(n).
+     * Time complexity is O(n)
      */
     public void displayReservations() {
         System.out.println("Current Reservations:");
@@ -54,8 +67,11 @@ public class ReservationSystem {
     }
 
     /**
-     * // Time complexity is O(n)
-     * @return
+     * This method returns the hash table of reservations. It is used by the
+     * OccupancyDisplay class to display the occupancy of the restaurant.
+     * Time complexity is O(1) because it returns a reference to the hash table.
+     * 
+     * @return the reservationsByCustomer
      */
     public HashTable<String, Reservation> getReservationsByCustomer() {
         return this.reservationsByCustomer;

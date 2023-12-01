@@ -5,7 +5,7 @@ package RestaurantReservationSystem;
  * has
  * a table number, capacity, and availability.
  * 
- * // The Table class does not contain any loops or recursive calls that depend on
+ * The Table class does not contain any loops or recursive calls that depend on
  * the input size. Therefore, the time complexity of all methods in the Table
  * class is O(1), which means the operations are constant time and independent
  * of the input size.
@@ -35,64 +35,69 @@ public class Table {
     }
 
     /**
-     * // Time complexity is O(1)
-     * @return
+     * Time complexity is O(1)
+     * 
+     * @return the table number
      */
     public int getTableNumber() {
         return tableNumber;
     }
 
     /**
-     * // Time complexity is O(1)
-     * @return
+     * Time complexity is O(1)
+     * 
+     * @return the capacity
      */
     public int getCapacity() {
         return capacity;
     }
 
     /**
-     * // Time complexity is O(1)
-     * @return
+     * Time complexity is O(1)
+     * 
+     * @return whether or not the table is available
      */
     public boolean getAvailablity() {
         return isAvailable;
     }
 
     /**
-     * // Time complexity is O(1)
-     * @return
+     * This method sets the table number.
+     * Time complexity is O(1)
      */
     public void setTableNumber(int tableNumber) {
         this.tableNumber = tableNumber;
     }
 
     /**
-     * // Time complexity is O(1)
-     * @return
+     * This method sets the capacity of the table.
+     * Time complexity is O(1)
      */
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
     /**
-     * // Time complexity is O(1)
-     * @return
+     * Time complexity is O(1)
      */
     public void setAvailablility(boolean isAvailable) {
         this.isAvailable = isAvailable;
     }
 
     /**
-     * // Time complexity is O(1)
-     * @return
+     * Time complexity is O(1)
+     * 
+     * @return a string representation of the table
      */
     public String toString() {
         return "Table Number: " + tableNumber + "\nCapacity: " + capacity + "\nIs Available: " + isAvailable;
     }
 
     /**
-     * // Time complexity is O(1)
-     * @return
+     * Time complexity is O(1)
+     * 
+     * @return true if the table numbers and capacities of the two tables are equal,
+     *         false otherwise
      */
     public boolean equals(Object o) {
         if (o instanceof Table) {

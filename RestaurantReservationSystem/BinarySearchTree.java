@@ -311,8 +311,13 @@ public class BinarySearchTree {
 
     /**
      * The time complexity of the inorder method is O(n).
-     * This is because the inorder method recurses down the tree to print the nodes. Starting
-     * 
+     * This is because the inorder method recurses down the tree to print the nodes.
+     * Starting
+     * from the root, the method recursively prints the left child of the node, then
+     * the node, then the right
+     * child of the node. This is done for each node in the tree, so the time
+     * complexity is O(n), because the algorithm visits
+     * each node in the tree once.
      */
     private void inorder(Node node) {
         if (node != null) {
@@ -322,6 +327,13 @@ public class BinarySearchTree {
         }
     }
 
+    /**
+     * Returns the root of the tree.
+     * Has a time complexity of O(1) because it performs one operation (returning
+     * the root)
+     * 
+     * @return the root of the tree
+     */
     public Node getRoot() {
         return root;
     }

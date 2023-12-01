@@ -1,6 +1,10 @@
 package RestaurantReservationSystem;
 
 /**
+ * The OccupancyDisplay class displays the occupancy of the restaurant by
+ * iterating over the entries in the reservationTable hash table and printing
+ * the table ID, customer name, and status of each reservation.
+ * 
  * The time complexity of the displayOccupancy() method is O(n), where n is the
  * number of entries in the reservationTable hash table. This is because the
  * method iterates over each entry in the hash table, performing constant-time
@@ -17,7 +21,7 @@ public class OccupancyDisplay {
     }
 
     /**
-     * // The time complexity is O(n)
+     * The time complexity is O(n)
      */
     public void displayOccupancy() {
         Entry<String, Reservation>[] entries = reservationTable.getAllEntries();
