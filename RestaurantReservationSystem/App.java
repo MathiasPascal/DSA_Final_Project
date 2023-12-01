@@ -3,8 +3,6 @@ package RestaurantReservationSystem;
 import java.util.Scanner;
 
 /**
- * Time complexity - O(n)
- * 
  * The time complexity of the main method in the App class is O(n),
  * where n is the number of iterations in the while loop. The while loop
  * runs indefinitely until the program is exited, but each iteration of the loop
@@ -78,12 +76,12 @@ public class App {
     }
 
     /**
-     * The time complexity of the makeReservation function is O(n), where n is the
+     * The time complexity of the makeReservation function is O(log n), where n is the
      * number of input elements. This is because the function performs a series of
      * constant-time operations (such as input reading and variable assignment) and
      * a single call to the findAvailableTable function, which has a time complexity
      * of O(log n) when using a binary search tree. Therefore, the dominant time
-     * complexity is O(n) because the loop iterates over each input element.
+     * complexity is O(log n).
      * 
      * @param scanner
      * @param reservationSystem
@@ -137,7 +135,7 @@ public class App {
      */
     private static void initializeTables(BinarySearchTree tableAvailabilityTree) {
         for (int i = 1; i <= 10; i++) {
-            Table table = new Table(i, 4, true);
+            Table table = new Table(i, i, true);
             tableAvailabilityTree.insert(table);
         }
     }
