@@ -138,7 +138,7 @@ public class App {
      * @param tableAvailabilityTree
      */
     private static void initializeTables(BinarySearchTree tableAvailabilityTree) {
-        for (int i = 1; i <= 12; i++) {
+        for (int i = 1; i <= 10; i++) {
             Table table = new Table(i, i, true);
             tableAvailabilityTree.insert(table);
         }

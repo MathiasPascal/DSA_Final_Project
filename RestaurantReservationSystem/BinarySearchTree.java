@@ -163,8 +163,15 @@ public class BinarySearchTree {
     }
 
     /**
-     * The time complexity of the insert function is O(log n)
+     * The time complexity of the insert function is O(log n) in an AVL tree.
+     * This is because the insert method calls the private insert method, which
+     * recurses down the tree to find the correct place to insert the node. The
+     * AVL tree maintains balance during insertion by performing rotations if
+     * necessary. The rotations take constant time, and the recursive calls to
+     * insert are made on balanced subtrees, resulting in a time complexity of
+     * O(log n).
      */
+
     private Node insert(Node node, Table table) {
         if (node == null) {
             node = new Node(table);
@@ -175,11 +182,63 @@ public class BinarySearchTree {
                 node.setRight(insert(node.getRight(), table));
             }
         }
+
+        // Perform AVL tree rotations if necessary to maintain balance
+        int balanceFactor = getBalanceFactor(node);
+        if (balanceFactor > 1) {
+            if (table.getCapacity() <= node.getLeft().getTable().getCapacity()) {
+                node = rotateRight(node);
+            } else {
+                node.setLeft(rotateLeft(node.getLeft()));
+                node = rotateRight(node);
+            }
+        } else if (balanceFactor < -1) {
+            if (table.getCapacity() > node.getRight().getTable().getCapacity()) {
+                node = rotateLeft(node);
+            } else {
+                node.setRight(rotateRight(node.getRight()));
+                node = rotateLeft(node);
+            }
+        }
+
         return node;
     }
 
+    // Helper method to calculate the balance factor of a node
+    private int getBalanceFactor(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        return getHeight(node.getLeft()) - getHeight(node.getRight());
+    }
+
+    // Helper method to calculate the height of a node
+    private int getHeight(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        return 1 + Math.max(getHeight(node.getLeft()), getHeight(node.getRight()));
+    }
+
+    // Helper method to perform a right rotation
+    private Node rotateRight(Node node) {
+        Node newRoot = node.getLeft();
+        node.setLeft(newRoot.getRight());
+        newRoot.setRight(node);
+        return newRoot;
+    }
+
+    // Helper method to perform a left rotation
+    private Node rotateLeft(Node node) {
+        Node newRoot = node.getRight();
+        node.setRight(newRoot.getLeft());
+        newRoot.setLeft(node);
+        return newRoot;
+    }
+
+
     /**
-     * The time complexity of the insert function is O(log n). This is because the
+     * The time complexity of the delete function is O(log n). This is because the
      * delete method calls the private delete method, which recurses down the tree
      * to find the node to delete. At each step in the recursion, the algorithm
      * seems to divide the tree in half, which is why the time complexity is
