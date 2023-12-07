@@ -107,7 +107,11 @@ public class App {
         String email = scanner.next();
         scanner.nextLine();
 
-        Customer customer = new Customer(firstName, lastName, phoneNumber, address, email, false, false);
+        System.out.print("How many guests will you be expecting: ");
+        int guestNum = scanner.nextInt();
+        scanner.nextLine();
+
+        Customer customer = new Customer(firstName, lastName, phoneNumber, address, email, true, guestNum);
 
         System.out.print("Enter reservation date (YYYY-MM-DD): ");
         String date = scanner.next();
@@ -115,7 +119,7 @@ public class App {
         System.out.print("Enter reservation time: ");
         String time = scanner.next();
 
-        Table availableTable = findAvailableTable(tableAvailabilityTree, 4);
+        Table availableTable = findAvailableTable(tableAvailabilityTree, guestNum);
 
         if (availableTable != null) {
             reservationSystem.addReservation(customer, availableTable, date, time);
@@ -134,7 +138,7 @@ public class App {
      * @param tableAvailabilityTree
      */
     private static void initializeTables(BinarySearchTree tableAvailabilityTree) {
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 12; i++) {
             Table table = new Table(i, i, true);
             tableAvailabilityTree.insert(table);
         }

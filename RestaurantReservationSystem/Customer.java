@@ -24,13 +24,14 @@ import java.util.regex.Pattern;
  * @param address        the address of the customer
  * @param email          the email address of the customer
  * @param hasReservation whether or not the customer has a reservation
- * @param hasDependents  whether or not the customer has dependents
+ * @param numGuests      how many guests the customer has
  * 
  *                       The time complexity of the Customer class constructors,
  *                       setters, and getters
  *                       is O(1) because each operation performs a constant
  *                       number of operations
- *                       regardless of the size of the input. The isValidNumber and
+ *                       regardless of the size of the input. The isValidNumber
+ *                       and
  *                       isValidEmail methods have a time
  *                       complexity of O(1) as well since they each perform a
  *                       single regular
@@ -43,7 +44,7 @@ public class Customer {
     private String address;
     private String email;
     private boolean hasReservation;
-    private boolean hasDependents;
+    private int numGuests;
 
     /**
      * Constructs a new Customer object with the specified first name, last name,
@@ -60,18 +61,18 @@ public class Customer {
      * @param address        the address of the customer
      * @param email          the email address of the customer
      * @param hasReservation whether or not the customer has a reservation
-     * @param hasDependents  whether or not the customer has dependents
+     * @param numGuests      how many guests the customer has
      */
 
     public Customer(String firstName, String lastName, String phoneNumber, String address, String email,
-            boolean hasReservation, boolean hasDependents) {
+            boolean hasReservation, int numGuests) {
         this.firstName = firstName;
         this.lastName = lastName;
         setNumber(phoneNumber);
         this.address = address;
         setEmail(email);
         this.hasReservation = hasReservation;
-        this.hasDependents = hasDependents;
+        this.numGuests = numGuests;
     }
 
     /**
@@ -234,21 +235,21 @@ public class Customer {
     }
 
     /**
-     * Returns true if the customer has dependents, false otherwise.
+     * Returns the number of guests the customer has.
      *
-     * @return true if the customer has dependents, false otherwise
+     * @return the number of guests the customer has
      */
-    public boolean hasDependents() {
-        return hasDependents;
+    public int getNumGuests() {
+        return numGuests;
     }
 
     /**
-     * Sets whether or not the customer has dependents.
+     * Sets the number of guests the customer has.
      *
-     * @param hasDependents whether or not the customer has dependents
+     * @param numGuests the number of guests the customer has
      */
-    public void setHasDependents(boolean hasDependents) {
-        this.hasDependents = hasDependents;
+    public void setNumGuests(int numGuests) {
+        this.numGuests = numGuests;
     }
 
     /**
@@ -268,7 +269,7 @@ public class Customer {
         output += cyan + "Email: " + reset + getEmail() + "\n";
         output += yellow + "Address: " + reset + getAddress() + "\n";
         output += cyan + "Has Reservation: " + reset + hasReservation() + "\n";
-        output += cyan + "Has Dependents: " + reset + hasDependents() + "\n";
+        output += cyan + "Number of Guests: " + reset + getNumGuests() + "\n";
         return output;
     }
 
@@ -289,7 +290,7 @@ public class Customer {
             return firstName.equals(other.firstName) && lastName.equals(other.lastName)
                     && phoneNumber.equals(other.phoneNumber) && address.equals(other.address)
                     && email.equals(other.email) && hasReservation == other.hasReservation
-                    && hasDependents == other.hasDependents;
+                    && numGuests == other.getNumGuests();
         } else {
             return false;
         }
