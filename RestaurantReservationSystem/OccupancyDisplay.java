@@ -12,6 +12,10 @@ package RestaurantReservationSystem;
  * Since the number of entries in the hash table determines the number of
  * iterations, the time complexity is linear with respect to the number of
  * entries.
+ * 
+ * @apiNote This class is not used in the final implementation of the
+ *         Restaurant Reservation System, but it is included here to demonstrate
+ *        the time complexity of the displayOccupancy() method.
  */
 public class OccupancyDisplay {
     private HashTable<String, Reservation> reservationTable;
