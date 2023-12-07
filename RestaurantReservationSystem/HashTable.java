@@ -60,7 +60,7 @@ public class HashTable<K, V extends Entry<K, V>> {
     }
 
     /**
-     * This nethod calculates the step size for the secondary hash function.
+     * This method calculates the step size for the secondary hash function.
      * The step size is the number of steps to take when the primary hash function
      * results in a collision.
      * 
